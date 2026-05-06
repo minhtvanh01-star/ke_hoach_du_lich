@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kế Hoạch Du Lịch Miền Trung 6N5Đ — Khởi hành 24/06/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy2: #132040;
+    --gold: #C9960C;
+    --gold2: #F0BE45;
+    --teal: #0D6E6E;
+    --teal2: #1AA3A3;
+    --sand: #F5ECD7;
+    --sand2: #EAD9BE;
+    --red: #C0392B;
+    --green: #1A7A4A;
+    --text: #1C2B3A;
+    --muted: #5A6A7A;
+    --border: #D8C9A8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(201,150,12,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(13,110,110,0.15) 0%, transparent 60%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,150,12,0.2);
+    color: var(--gold2);
+    border: 1px solid rgba(201,150,12,0.4);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--gold2); }
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    position: relative;
+    margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .stat {
+    padding: 16px 28px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold2);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-lbl {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== ALERT ===== */
+  .alert-bar {
+    background: #7B2A00;
+    color: #FFD9B3;
+    font-size: 13px;
+    padding: 12px 40px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .alert-bar b { color: #FFB067; }
+
+  /* ===== TABS NAV ===== */
+  .tabs-nav {
+    background: var(--navy2);
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid rgba(201,150,12,0.3);
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 14px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all .2s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.8); }
+  .tab-btn.active {
+    color: var(--gold2);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ===== SECTION HEADING ===== */
+  .sec-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    margin-top: 36px;
+  }
+  .sec-heading:first-child { margin-top: 0; }
+  .sec-icon {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: var(--gold2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .sec-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .sec-heading .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* ===== DAY CARDS ===== */
+  .day-card {
+    background: #fff;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(10,22,40,0.07);
+    border: 1px solid var(--border);
+  }
+  .day-header {
+    background: var(--navy);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .day-num.last { background: #C0392B; color: #fff; }
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+  }
+  .day-meta {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+    line-height: 1.5;
+  }
+  .day-body { padding: 16px 20px; }
+  .tl-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .tl-row:last-child { margin-bottom: 0; }
+  .tl-time {
+    font-size: 11.5px;
+    color: var(--muted);
+    min-width: 86px;
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .tl-dot-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    flex-shrink: 0;
+  }
+  .tl-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tl-line {
+    width: 1px;
+    flex: 1;
+    min-height: 14px;
+    background: var(--border);
+    margin-top: 3px;
+  }
+  .tl-content {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+    flex: 1;
+    padding-bottom: 2px;
+  }
+  .tl-content b { color: var(--navy); }
+  .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.3px;
+  }
+  .tag-warn { background: #FDEDEC; color: #C0392B; }
+  .tag-tip { background: #E8F8F2; color: #1A7A4A; }
+  .tag-hot { background: #FEF5E7; color: #9A5F00; }
+  .tag-special { background: #EEF0FE; color: #4A3DAB; }
+
+  /* ===== HOTEL CARDS ===== */
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .hotel-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    transition: box-shadow .2s;
+  }
+  .hotel-card:hover { box-shadow: 0 4px 20px rgba(10,22,40,0.1); }
+  .hotel-card.featured {
+    border-color: var(--gold);
+    border-width: 2px;
+  }
+  .featured-badge {
+    position: absolute;
+    top: -10px; right: 14px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .hotel-city {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .hotel-stars { color: var(--gold); font-size: 12px; margin-bottom: 5px; }
+  .hotel-price {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .hotel-phone {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .hotel-note {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.55;
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 4px;
+  }
+
+  /* ===== RESTAURANT CARDS ===== */
+  .resto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .resto-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: box-shadow .2s;
+  }
+  .resto-card:hover { box-shadow: 0 4px 20px rgba(10,22,40,0.1); }
+  .resto-loc {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+  }
+  .resto-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .resto-spec {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .resto-addr { font-size: 12px; color: var(--text); margin-bottom: 3px; }
+  .resto-phone {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .resto-how {
+    font-size: 11.5px;
+    color: var(--green);
+    background: #EEF8F3;
+    border-radius: 6px;
+    padding: 7px 10px;
+    line-height: 1.55;
+  }
+
+  /* ===== COST TABLE ===== */
+  .cost-wrap {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(10,22,40,0.07);
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .cost-table th {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 11px 16px;
+    text-align: left;
+  }
+  .cost-table th:last-child { text-align: right; }
+  .cost-table td {
+    padding: 9px 16px;
+    border-bottom: 1px solid #F0E8D4;
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table .cat-row td {
+    background: #FAF4E8;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+  }
+  .cost-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .cost-table .total-row td {
+    background: var(--navy);
+    color: var(--gold2);
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: none;
+    padding: 13px 16px;
+  }
+  .cost-table .total-row td:last-child { text-align: right; }
+
+  /* ===== NOTICE BOXES ===== */
+  .notice {
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+  .notice.warn { background: #FDF0E8; color: #7B3A00; border-left: 3px solid #C0392B; }
+  .notice.tip { background: #E8F5EE; color: #1A5232; border-left: 3px solid #1A7A4A; }
+  .notice.info { background: #EAF3FB; color: #1A3A5C; border-left: 3px solid #1A6CA8; }
+  .notice b { font-weight: 700; }
+
+  /* ===== ROUTE MAP ===== */
+  .route-bar {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .route-stop { text-align: center; flex-shrink: 0; }
+  .route-stop-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.3px;
+  }
+  .route-stop-date { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+  .route-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin: 8px auto 4px;
+    border: 2px solid rgba(201,150,12,0.4);
+  }
+  .route-arrow {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), rgba(201,150,12,0.3));
+    min-width: 30px;
+    position: relative;
+    top: 6px;
+    flex-shrink: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy2);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    font-size: 12px;
+    padding: 20px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 35px; }
+    .stat { padding: 12px 16px; }
+    .stat-val { font-size: 20px; }
+    .tab-btn { padding: 12px 12px; font-size: 12px; }
+    .tl-time { min-width: 68px; font-size: 10.5px; }
+    .hotel-grid, .resto-grid { grid-template-columns: 1fr; }
+    .cost-table th, .cost-table td { padding: 8px 10px; font-size: 12px; }
+    .route-bar { padding: 14px 16px; }
+  }
+
+  @media print {
+    .tabs-nav { display: none !important; }
+    .panel { display: block !important; page-break-after: always; }
+    .panel:last-child { page-break-after: avoid; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Kế Hoạch Du Lịch · Đoàn 15 Người</div>
+  <h1>Hành Trình <span>Miền Trung</span><br>6 Ngày 5 Đêm</h1>
+  <p class="hero-sub">Thái Bình · Huế · Đà Nẵng · Hội An · Quảng Bình</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">24/06</span><span class="stat-lbl">Khởi hành</span></div>
+    <div class="stat"><span class="stat-val">15</span><span class="stat-lbl">Thành viên</span></div>
+    <div class="stat"><span class="stat-val">6N5Đ</span><span class="stat-lbl">Thời gian</span></div>
+    <div class="stat"><span class="stat-val">~8tr</span><span class="stat-lbl">Bình quân/người</span></div>
+    <div class="stat"><span class="stat-val">3:00</span><span class="stat-lbl">Giờ xuất phát</span></div>
+  </div>
+</div>
+
+<!-- ALERT -->
+<div class="alert-bar">
+  ⚠️ <b>Mùa cao điểm hè 2026:</b> Khách sạn 4–5 sao Đà Nẵng đạt công suất 90–95%. Cần <b>đặt phòng, vé tham quan ngay bây giờ</b> (ít nhất 6–8 tuần trước). Nhiệt độ 30–34°C — tránh hoạt động ngoài trời khung 11h–15h.
+</div>
+
+<!-- TABS NAV -->
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showPanel('lich', this)">📅 Lịch Trình</button>
+  <button class="tab-btn" onclick="showPanel('ks', this)">🏨 Khách Sạn</button>
+  <button class="tab-btn" onclick="showPanel('nh', this)">🍽️ Nhà Hàng</button>
+  <button class="tab-btn" onclick="showPanel('cp', this)">💰 Chi Phí</button>
+  <button class="tab-btn" onclick="showPanel('luu', this)">📌 Lưu Ý</button>
+</nav>
+
+<div class="container">
+
+<!-- ===== PANEL: LỊCH TRÌNH ===== -->
+<div id="lich" class="panel active">
+
+  <!-- Route map -->
+  <div class="route-bar">
+    <div class="route-stop"><div class="route-dot" style="background:#fff;border-color:#fff"></div><div class="route-stop-name">Thái Bình</div><div class="route-stop-date">24/06 · 3:00</div></div>
+    <div class="route-arrow"></div>
+    <div class="route-stop"><div class="route-dot"></div><div class="route-stop-name">Huế</div><div class="route-stop-date">24/06 · 17h</div></div>
+    <div class="route-arrow"></div>
+    <div class="route-stop"><div class="route-dot"></div><div class="route-stop-name">Đà Nẵng</div><div class="route-stop-date">25/06 → 27/06</div></div>
+    <div class="route-arrow"></div>
+    <div class="route-stop"><div class="route-dot"></div><div class="route-stop-name">Hội An</div><div class="route-stop-date">27/06 (ngày)</div></div>
+    <div class="route-arrow"></div>
+    <div class="route-stop"><div class="route-dot"></div><div class="route-stop-name">Quảng Bình</div><div class="route-stop-date">28/06</div></div>
+    <div class="route-arrow"></div>
+    <div class="route-stop"><div class="route-dot" style="background:#C0392B;border-color:#C0392B"></div><div class="route-stop-name">Thái Bình</div><div class="route-stop-date">29/06 · 20h</div></div>
+  </div>
+
+  <!-- NGÀY 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Ngày 1</span>
+      <span class="day-title">24/06 — Thái Bình → Cố đô Huế</span>
+      <div class="day-meta">~650 km · dự kiến 11–12 giờ<br>⚡ Mùa hè thêm 30–60 phút</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">03:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Xe 45 chỗ đón đoàn tại Thái Bình. Chuẩn bị gối chăn, thuốc say xe cho trẻ nhỏ, nước uống và đồ ăn nhẹ trên xe.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">06:30–07:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Dừng nghỉ + ăn sáng tại Thanh Hóa (khu vực TX. Bỉm Sơn). Nghỉ 45–60 phút. <span class="tag tag-tip">Tài xế nghỉ ngơi</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">11:30–13:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn trưa & nghỉ ngơi tại Hà Tĩnh (~1,5–2 tiếng). Rất cần thiết cho người cao tuổi và trẻ nhỏ sau 8 tiếng ngồi xe.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">17:00–18:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Đến Huế. <b>Nhận phòng White Lotus Hue Hotel</b>. Nghỉ ngơi, tắm rửa sau hành trình dài. <span class="tag tag-warn">Đặt phòng trước!</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:00–20:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn tối đặc sản xứ Huế: bánh bèo, bánh nậm, bánh lọc, bún bò Huế tại <b>Nhà hàng Tịnh Gia Viên</b>.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">20:30–22:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Lên thuyền rồng bến Tòa Khâm — nghe ca Huế trên sông Hương + thả hoa đăng cầu phúc. <span class="tag tag-hot">Đặt trước — đông mùa hè</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">22:00+</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div></div>
+        <div class="tl-content">Về nghỉ. Trẻ em & người cao tuổi nên nghỉ sớm sau ngày di chuyển dài.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NGÀY 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Ngày 2</span>
+      <span class="day-title">25/06 — Cố đô Huế → Đà Nẵng</span>
+      <div class="day-meta">~100 km · 2–2,5h qua hầm Hải Vân<br>⚡ Ra tham quan sáng sớm tránh nắng</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">07:00–08:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn sáng buffet tại khách sạn. Trả phòng và chuẩn bị hành lý.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">08:00–09:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Tham quan <b>Lăng Tự Đức</b> — kiến trúc lãng mạn của vua thi sỹ triều Nguyễn. <span class="tag tag-tip">Mát buổi sáng, ra sớm là tốt nhất</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">09:30–11:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Khám phá <b>Đại Nội Huế</b> (Di sản UNESCO) — Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu. <span class="tag tag-warn">Nắng to — mang ô & mũ</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">12:00–13:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn trưa tại <b>Nhà hàng Hạnh</b> (Phó Đức Chính, Huế) — phục vụ nhanh, phù hợp đoàn gấp giờ di chuyển.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:30–16:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Xe khởi hành đi Đà Nẵng qua hầm Hải Vân. Có thể dừng ~15 phút ngắm cảnh đèo Hải Vân hùng vĩ.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">16:00–17:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Đến Đà Nẵng. <b>Nhận phòng Parosand Danang Hotel</b> (hoặc khách sạn đã đặt). Nghỉ ngơi, tắm rửa.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">17:30–19:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Tắm biển Mỹ Khê — giờ chiều mát nhất, nước trong, sóng nhẹ, phù hợp mọi lứa tuổi. <span class="tag tag-tip">Giờ đẹp nhất để tắm biển</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:30–21:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div></div>
+        <div class="tl-content">Ăn tối tại <b>Nhà hàng Madame Lân</b> (4 Bạch Đằng, Đà Nẵng) — 300 món ẩm thực 3 miền, không gian rộng, phù hợp đoàn đông. <span class="tag tag-warn">Đặt bàn trước 1–2 ngày</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NGÀY 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Ngày 3</span>
+      <span class="day-title">26/06 (Thứ 6) — Núi Thần Tài → Chùa Linh Ứng → Cầu Rồng</span>
+      <div class="day-meta">Ngày nghỉ dưỡng & vui chơi<br>🎆 Thứ 6: Cầu Rồng phun lửa 21:00!</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">07:00–08:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn sáng buffet tại khách sạn. Chuẩn bị đồ tắm, đồ chống nắng cho cả ngày.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">08:30–12:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#D85A30"></div><div class="tl-line"></div></div>
+        <div class="tl-content"><b>Công viên khoáng nóng Núi Thần Tài</b> — tắm khoáng mỏ, tắm bùn khoáng, công viên nước. Vui cho cả nhà, kể cả người cao tuổi. <b>Mua combo online giảm 10–15%.</b> <span class="tag tag-hot">Trải nghiệm không thể bỏ qua</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">12:00–13:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn trưa buffet trong khu Núi Thần Tài — tiện, không cần di chuyển.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:00–15:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#C0392B"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Về khách sạn nghỉ trưa bắt buộc. Nắng đỉnh điểm 33–34°C, chỉ số UV cực mạnh. Trẻ em & người cao tuổi tuyệt đối không ra ngoài. <span class="tag tag-warn">Nghỉ bắt buộc</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">15:30–18:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Viếng <b>Chùa Linh Ứng Bán đảo Sơn Trà</b> — chiêm ngưỡng tượng Phật Quan Thế Âm cao nhất Việt Nam (67m), view toàn cảnh TP. Đà Nẵng và biển. <span class="tag tag-tip">Chiều mát, ánh sáng đẹp</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:00–20:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn tối tại <b>Nhà hàng Cội Nguồn</b> (94 Võ Nguyên Giáp, Đà Nẵng) — nguyên liệu tươi, giá phải chăng, gần biển Mỹ Khê.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">21:00–22:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div></div>
+        <div class="tl-content">🎆 <b>Xem Cầu Rồng phun lửa & phun nước</b> — đặc sản Đà Nẵng, diễn ra vào thứ 6 & thứ 7. Hôm nay là thứ 6, không thể bỏ lỡ! Dạo sông Hàn về đêm. <span class="tag tag-special">26/06 là thứ 6 ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NGÀY 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Ngày 4</span>
+      <span class="day-title">27/06 — VinWonders Nam Hội An → Biển Cửa Đại → Phố cổ Hội An</span>
+      <div class="day-meta">Đà Nẵng → Hội An ~35km<br>⚡ Cao điểm hè: 75–90 phút — xuất phát 7:30!</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">07:00–07:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn sáng buffet nhanh tại khách sạn. Chuẩn bị đồ và lên xe sớm.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">07:30–09:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Di chuyển từ Đà Nẵng đến VinWonders Nam Hội An (~90 phút mùa hè cao điểm). <span class="tag tag-warn">Phải xuất phát sớm — tắc đường!</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">09:00–13:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#D85A30"></div><div class="tl-line"></div></div>
+        <div class="tl-content"><b>VinWonders Nam Hội An</b> — River Safari trên sông, Đảo văn hóa dân gian, các khu trò chơi hiện đại. Trẻ em sẽ rất thích thú. <b>Mua combo online trước để được giảm giá.</b></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:00–14:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn trưa buffet trong khu VinWonders. Nghỉ ngơi trong điều hòa tránh nắng trưa.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">14:30–16:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Tắm biển <b>Cửa Đại</b> — sóng nhẹ hơn Mỹ Khê, bãi đẹp, rất phù hợp trẻ em và người cao tuổi. <span class="tag tag-tip">An toàn cho mọi lứa tuổi</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">17:00–21:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content"><b>Phố cổ Hội An</b> — Chùa Cầu Nhật Bản, nhà cổ Tấn Ký, Hội quán Phúc Kiến, ngắm đèn lồng rực rỡ, thả hoa đăng sông Hoài. <span class="tag tag-special">Điểm nhấn của cả chuyến đi</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:00–20:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn tối đặc sản: Cơm gà Hội An, Cao lầu, Mì Quảng tại <b>Vy's Market Restaurant</b> (3 Nguyễn Hoàng). <span class="tag tag-warn">Đặt bàn trước 1–2 ngày</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">21:30–22:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div></div>
+        <div class="tl-content">Xe đón về Đà Nẵng (~60 phút). Phân công người trông trẻ nhỏ, chuẩn bị đồ cho ngày hôm sau.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NGÀY 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Ngày 5</span>
+      <span class="day-title">28/06 — Đà Nẵng → Quảng Bình (Động Thiên Đường)</span>
+      <div class="day-meta">~320 km · 5–6 giờ<br>⚡ Xuất phát sớm để tham quan buổi chiều mát</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">06:30–07:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn sáng buffet + làm thủ tục trả phòng khách sạn Đà Nẵng.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">08:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Xe khởi hành về hướng Quảng Bình. Xuất phát sớm để tránh nắng và đến Động Thiên Đường đúng giờ mát.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">11:30–13:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Nghỉ ngơi + ăn trưa tại nhà hàng địa phương ven đường (khu vực Hà Tĩnh). Tài xế nghỉ đủ giờ.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:30–16:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content"><b>Động Thiên Đường</b> — "Hoàng cung trong lòng đất", nhiệt độ bên trong chỉ 17°C, hệ thống thạch nhũ tráng lệ bậc nhất thế giới. <span class="tag tag-tip">Mát tự nhiên — tuyệt vời giữa hè!</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">17:30–18:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Về TP. Đồng Hới. <b>Nhận phòng Meliá Vinpearl Quảng Bình</b>. Nghỉ ngơi, tắm rửa sau ngày dài.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:00–21:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div></div>
+        <div class="tl-content">Ăn tối hải sản tươi Quảng Bình (nhờ concierge khách sạn giới thiệu nhà hàng tốt nhất). Dạo bờ sông Nhật Lệ về đêm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NGÀY 6 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num last">Ngày 6</span>
+      <span class="day-title">29/06 — Quảng Bình → Mộ Đại tướng → Thái Bình</span>
+      <div class="day-meta">~420 km · 7–8 giờ<br>⚡ Xuất phát trước 9:00, nghỉ đủ giờ</div>
+    </div>
+    <div class="day-body">
+      <div class="tl-row">
+        <div class="tl-time">06:30–08:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ăn sáng buffet khách sạn. Tự do tắm biển Nhật Lệ (~30 phút). Mua đặc sản Quảng Bình về quà: cá khô, mực rim, ruốc, rượu, đặc sản địa phương.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">08:30–09:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#378ADD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Trả phòng và <b>khởi hành về Thái Bình sớm</b> — quan trọng để về kịp tối, tránh kẹt xe cuối hành trình.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">10:30–11:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7F77DD"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Ghé viếng <b>Mộ Đại tướng Võ Nguyên Giáp</b> tại Vũng Chùa, Quảng Bình (~30 phút). Thời gian dừng vừa phải, trang nghiêm.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">12:30–14:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Nghỉ ngơi + ăn trưa tại nhà hàng Hà Tĩnh. Tài xế nghỉ đủ giờ quy định. <span class="tag tag-tip">Không đi tiếp khi tài xế buồn ngủ</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">15:00–15:30</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#888780"></div><div class="tl-line"></div></div>
+        <div class="tl-content">Dừng nghỉ thêm 20–30 phút tại Nghệ An nếu cần. Bổ sung nước uống, đồ ăn nhẹ. Chuẩn bị tinh thần cuối hành trình.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">20:00–21:00</div>
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:#C0392B"></div></div>
+        <div class="tl-content">🎉 <b>Về đến Thái Bình!</b> Kết thúc hành trình 6 ngày 5 đêm đáng nhớ. Chia tay đoàn, hẹn gặp lại chuyến sau!</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end #lich -->
+
+
+<!-- ===== PANEL: KHÁCH SẠN ===== -->
+<div id="ks" class="panel">
+
+  <div class="notice warn">
+    <b>⚠️ Mùa cao điểm tháng 6/2026:</b> Công suất phòng khách sạn 4–5 sao Đà Nẵng đạt 90–95%. Giá cao hơn 20–30% so với thấp điểm. Cần đặt ngay, trước ít nhất <b>6–8 tuần</b>. Gọi điện đặt nhóm thường được giảm 5–10% so với đặt online từng phòng.
+  </div>
+
+  <!-- BẢNG SO SÁNH GIÁ NHANH -->
+  <div class="sec-heading">
+    <div class="sec-icon">💡</div>
+    <h2>So sánh giá nhanh theo phân khúc</h2>
+    <div class="line"></div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px;">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:var(--navy);">
+          <th style="padding:10px 14px;color:rgba(255,255,255,0.7);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:left;">Phân khúc</th>
+          <th style="padding:10px 14px;color:rgba(255,255,255,0.7);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:center;">Huế (1 đêm)</th>
+          <th style="padding:10px 14px;color:rgba(255,255,255,0.7);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:center;">Đà Nẵng (3 đêm)</th>
+          <th style="padding:10px 14px;color:rgba(255,255,255,0.7);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:center;">Quảng Bình (1 đêm)</th>
+          <th style="padding:10px 14px;color:var(--gold2);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:right;">Tổng 5 phòng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #F0E8D4;">
+          <td style="padding:9px 14px;font-weight:600;color:var(--green);">💚 Tiết kiệm</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">400–600k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">500–750k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">500–700k</td>
+          <td style="padding:9px 14px;text-align:right;font-weight:600;">~18–25 triệu</td>
+        </tr>
+        <tr style="border-bottom:1px solid #F0E8D4;background:#FAF4E8;">
+          <td style="padding:9px 14px;font-weight:600;color:#9A5F00;">🟡 Tầm trung</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">700–1.100k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">900–1.300k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">600–900k</td>
+          <td style="padding:9px 14px;text-align:right;font-weight:600;">~28–40 triệu</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 14px;font-weight:600;color:var(--gold);">⭐ Cao cấp</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">1.200–2.000k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">1.500–3.000k</td>
+          <td style="padding:9px 14px;text-align:center;color:var(--muted);">1.400–2.200k</td>
+          <td style="padding:9px 14px;text-align:right;font-weight:600;">~45–65 triệu</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HUẾ -->
+  <div class="sec-heading">
+    <div class="sec-icon">🏛️</div>
+    <h2>Huế — Đêm 1 (24/06) · 5 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="hotel-grid">
+    <div class="hotel-card" style="border-left:3px solid var(--green);">
+      <div class="hotel-city">💚 Tiết kiệm · Trung tâm Huế</div>
+      <div class="hotel-name">Hue Jade Hotel</div>
+      <div class="hotel-stars">★★★ &nbsp; 4.6/5 (640 đánh giá)</div>
+      <div class="hotel-price">~400.000–550.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 905 931 119</div>
+      <div class="hotel-note">43 Hùng Vương, Phú Hội, Huế. Sạch sẽ, nhân viên thân thiện, buffet sáng ngon. "Dịch vụ 5 sao với giá 3 sao" — đánh giá của khách. Vị trí trung tâm, đi bộ mọi nơi.</div>
+    </div>
+    <div class="hotel-card" style="border-left:3px solid var(--green);">
+      <div class="hotel-city">💚 Tiết kiệm · Gần sông Hương</div>
+      <div class="hotel-name">Sunny A Hotel</div>
+      <div class="hotel-stars">★★★ &nbsp; 4.5/5 (432 đánh giá)</div>
+      <div class="hotel-price">~350.000–500.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 234 3829 990</div>
+      <div class="hotel-note">17/34 Nguyễn Tri Phương, Huế. Phòng thoáng, nước nóng tốt. Chủ nhà nhiệt tình, tổ chức được tour tham quan. Đi bộ 7 phút ra sông Hương và phố đi bộ.</div>
+    </div>
+    <div class="hotel-card featured">
+      <div class="featured-badge">⭐ Gợi ý chính</div>
+      <div class="hotel-city">🟡 Tầm trung · Bể bơi · Gym lớn</div>
+      <div class="hotel-name">White Lotus Hue Hotel</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.5/5 (1.074 đánh giá)</div>
+      <div class="hotel-price">~800.000–1.100.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 234 3881 888</div>
+      <div class="hotel-note">05–07 Hoàng Hoa Thám, Huế. Bể bơi + gym lớn nhất Huế. Buffet sáng phong phú. Trung tâm đi bộ. Bar jazz tầng 26 thứ 5 & thứ 7. Gọi trực tiếp xin giá đoàn.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">🟡 Tầm trung · View thành phố</div>
+      <div class="hotel-name">Mondial Hotel Hue</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.0/5 (1.034 đánh giá)</div>
+      <div class="hotel-price">~600.000–800.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 234 3945 599</div>
+      <div class="hotel-note">17 Nguyễn Huệ, Huế. Nhà hàng tầng 9 view toàn thành phố. Buffet sáng đa dạng. Có ATM sảnh. Cách trung tâm ~20 phút đi bộ. Phù hợp đoàn muốn tiết kiệm hơn.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">⭐ Cao cấp · Ngay bờ sông Hương</div>
+      <div class="hotel-name">Century Riverside Hotel Hue</div>
+      <div class="hotel-stars">★★★★ &nbsp; 3.9/5 (1.268 đánh giá)</div>
+      <div class="hotel-price">~1.200.000–1.800.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 234 3956 688</div>
+      <div class="hotel-note">49 Lê Lợi, Huế. Vị trí đắc địa nhất Huế — ngay bờ sông Hương, gần mọi điểm tham quan. Bể bơi. Buffet sáng rất nhiều trái cây nhiệt đới. Phòng cũ nhưng vị trí tuyệt.</div>
+    </div>
+  </div>
+
+  <!-- ĐÀ NẴNG -->
+  <div class="sec-heading">
+    <div class="sec-icon">🏖️</div>
+    <h2>Đà Nẵng — Đêm 2, 3, 4 (25–27/06) · 5 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="hotel-grid">
+    <div class="hotel-card" style="border-left:3px solid var(--green);">
+      <div class="hotel-city">💚 Tiết kiệm · Gia đình vận hành</div>
+      <div class="hotel-name">La Maison Da Nang Beach</div>
+      <div class="hotel-stars">★★★ &nbsp; 4.2/5 (320 đánh giá)</div>
+      <div class="hotel-price">~400.000–600.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 236 3936 333</div>
+      <div class="hotel-note">12A Phạm Văn Đồng, An Hải. Đi bộ 5 phút ra biển. Gia đình vận hành, rất thân thiện và chân thành. Giặt ủi tại chỗ. Phù hợp đoàn muốn tiết kiệm tối đa.</div>
+    </div>
+    <div class="hotel-card" style="border-left:3px solid var(--green);">
+      <div class="hotel-city">💚 Tiết kiệm · Gần biển · Đánh giá cao</div>
+      <div class="hotel-name">Hanami Hotel Danang</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.6/5 (2.100 đánh giá)</div>
+      <div class="hotel-price">~500.000–750.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 905 432 992</div>
+      <div class="hotel-note">61–63 Hoàng Kế Viêm, Ngũ Hành Sơn. Đi bộ 3 phút ra biển Mỹ Khê. Phòng sạch sẽ, nhân viên xuất sắc. Khu phố Tây An Thương tiện nhiều nhà hàng, quán café.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">🟡 Tầm trung · Ngay mặt biển</div>
+      <div class="hotel-name">Mercy Emerald Hotel</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.7/5 (1.488 đánh giá)</div>
+      <div class="hotel-price">~700.000–950.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 236 3586 666</div>
+      <div class="hotel-note">170–174 Nguyễn Văn Thoại, Ngũ Hành Sơn. Rooftop view biển & núi đẹp. Nhân viên cực kỳ được khen. Gần biển, giá hợp lý. Điểm đánh giá cao nhất trong phân khúc này.</div>
+    </div>
+    <div class="hotel-card featured">
+      <div class="featured-badge">⭐ Gợi ý chính</div>
+      <div class="hotel-city">🟡 Tầm trung cao · Ngay bãi Mỹ Khê</div>
+      <div class="hotel-name">Parosand Danang Hotel</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.8/5 (4.855 đánh giá)</div>
+      <div class="hotel-price">~1.100.000–1.500.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 236 3928 688</div>
+      <div class="hotel-note">216 Võ Nguyên Giáp, An Hải. Ngay bãi Mỹ Khê, hồ bơi rooftop view biển. Có Family Suite. Điểm số cao nhất khu vực. Đặt trước ít nhất 6 tuần — rất đông mùa hè.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">⭐ Cao cấp · Resort · Bãi biển riêng</div>
+      <div class="hotel-name">Furama Resort Danang</div>
+      <div class="hotel-stars">★★★★★ &nbsp; 4.5/5 (6.132 đánh giá)</div>
+      <div class="hotel-price">~2.000.000–4.000.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 236 3847 333</div>
+      <div class="hotel-note">105 Võ Nguyên Giáp, Ngũ Hành Sơn. Resort 5 sao lâu đời nhất Đà Nẵng. Bãi biển riêng, 3 hồ bơi, nhiều nhà hàng. Công viên trong khuôn viên có công quằng sải. Phù hợp đoàn muốn trải nghiệm resort đẳng cấp.</div>
+    </div>
+  </div>
+
+  <!-- QUẢNG BÌNH -->
+  <div class="sec-heading">
+    <div class="sec-icon">🏔️</div>
+    <h2>Quảng Bình — Đêm 5 (28/06) · 4 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="hotel-grid">
+    <div class="hotel-card" style="border-left:3px solid var(--green);">
+      <div class="hotel-city">💚 Tiết kiệm · Gần Động Thiên Đường</div>
+      <div class="hotel-name">Phong Nha Farmstay</div>
+      <div class="hotel-stars">★★★★</div>
+      <div class="hotel-price">~500.000–800.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 913 400 914</div>
+      <div class="hotel-note">Khu vực Phong Nha, Bố Trạch. Cách Động Thiên Đường ~10km. View núi rừng đẹp, yên tĩnh. Phù hợp đoàn muốn trải nghiệm sinh thái và gần điểm tham quan chính.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">🟡 Tầm trung · Mới · Cách biển 400m</div>
+      <div class="hotel-name">Toàn Cầu Hotel Quảng Bình</div>
+      <div class="hotel-stars">★★★ &nbsp; 4.3/5 (48 đánh giá)</div>
+      <div class="hotel-price">~600.000–800.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 812 556 895</div>
+      <div class="hotel-note">Phố đi bộ Regal Legend, Đồng Hới. Khách sạn mới xây, sạch đẹp. Rooftop bể bơi view thành phố. Cách biển Nhật Lệ 400m. Buffet sáng đa dạng, nhân viên thân thiện.</div>
+    </div>
+    <div class="hotel-card">
+      <div class="hotel-city">🟡 Tầm trung · Cạnh Vinplaza</div>
+      <div class="hotel-name">Dolphin Homestay Đồng Hới</div>
+      <div class="hotel-stars">★★★★ &nbsp; 4.9/5 (371 đánh giá)</div>
+      <div class="hotel-price">~400.000–650.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 985 668 563</div>
+      <div class="hotel-note">42 Nguyễn Du, Đồng Hới. Đánh giá cực kỳ cao 4.9/5. Chủ nhà nhiệt tình, có view biển. Phòng sạch, tiện nghi. Phù hợp đoàn muốn không khí ấm áp, gia đình.</div>
+    </div>
+    <div class="hotel-card featured">
+      <div class="featured-badge">⭐ Gợi ý chính</div>
+      <div class="hotel-city">⭐ Cao cấp · View sông Nhật Lệ</div>
+      <div class="hotel-name">Meliá Vinpearl Quảng Bình</div>
+      <div class="hotel-stars">★★★★★ &nbsp; 4.9/5 (2.988 đánh giá)</div>
+      <div class="hotel-price">~1.400.000–2.000.000đ / phòng / đêm</div>
+      <div class="hotel-phone">☎ +84 232 3900 888</div>
+      <div class="hotel-note">Quách Xuân Kỳ, Đồng Hới. Sang nhất Đồng Hới, dịch vụ 5 sao. View sông Nhật Lệ tuyệt đẹp. Cạnh Vinplaza tiện mua sắm. Chỉ 1 đêm — đáng trải nghiệm!</div>
+    </div>
+  </div>
+
+  <div class="notice tip">
+    <b>💡 Mẹo đặt phòng cho đoàn 15 người:</b> Cần 5–6 phòng (triple/family/double). Gọi điện trực tiếp xin giá đoàn — thường rẻ hơn 5–10% so với đặt qua OTA. Thông báo rõ cần giường phụ cho trẻ em. Hỏi về bữa sáng có phục vụ cùng lúc 15 người không. Đặt ngay vì giá tăng dần theo thời gian.
+  </div>
+</div><!-- end #ks -->
+
+
+<!-- ===== PANEL: NHÀ HÀNG ===== -->
+<div id="nh" class="panel">
+
+  <div class="notice warn">
+    <b>⚠️ Lưu ý đặt bàn mùa cao điểm:</b> Gọi điện trước <b>1–3 ngày</b> là bắt buộc trong tháng 6. Thông báo rõ "đoàn 15 người". Hỏi về set menu (phục vụ nhanh hơn, thường rẻ hơn gọi lẻ). Đặt giờ ăn trước 19:00 hoặc sau 20:30 để tránh giờ cao điểm.
+  </div>
+
+  <!-- HUẾ -->
+  <div class="sec-heading">
+    <div class="sec-icon">🏛️</div>
+    <h2>Nhà hàng tại Huế · 5 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="resto-grid">
+    <div class="resto-card" style="border-left:3px solid var(--green);">
+      <div class="resto-loc">💚 Tiết kiệm · Sáng / Trưa · Bánh Huế</div>
+      <div class="resto-name">Nhà Hàng Đặc Sản Bánh Huế</div>
+      <div class="resto-spec">Bánh bèo · Bánh nậm · Bánh ướt · Giá bình dân</div>
+      <div class="resto-addr">📍 10 Đinh Công Tráng, Phú Xuân, TP. Huế</div>
+      <div class="resto-phone">☎ +84 345 794 229 &nbsp;|&nbsp; Mở 7:30–21:00</div>
+      <div class="resto-how">Đặc sản bánh Huế tươi, phục vụ nhanh. Giá cực bình dân ~30–60k/người. Menu có ảnh minh họa, dễ gọi. Phù hợp ăn sáng hoặc bữa nhẹ buổi trưa. Cách Đại Nội 10 phút đi bộ.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">🟡 Tầm trung · Tối ngày 1</div>
+      <div class="resto-name">Nhà hàng Hạnh</div>
+      <div class="resto-spec">Ẩm thực Việt Nam · Đánh giá 5 sao · Phục vụ nhanh</div>
+      <div class="resto-addr">📍 Phó Đức Chính, phường Phú Hội, TP. Huế</div>
+      <div class="resto-phone">☎ Tìm Google Maps: "Nhà hàng Hạnh Huế" · Mở 10h–21h</div>
+      <div class="resto-how">Đồ ngon, phục vụ nhanh — lý tưởng khi đoàn gấp giờ di chuyển. ~80–120k/người. Đặt trước buổi sáng, ăn lúc 12h là kịp chuyến đi Đà Nẵng.</div>
+    </div>
+    <div class="resto-card featured" style="border-left:3px solid var(--gold);">
+      <div class="resto-loc">⭐ Gợi ý chính · Tối ngày 1</div>
+      <div class="resto-name">Tịnh Gia Viên</div>
+      <div class="resto-spec">Ẩm thực cung đình Huế · Nhà vườn cổ kính</div>
+      <div class="resto-addr">📍 7 Lê Thánh Tôn, TP. Huế</div>
+      <div class="resto-phone">☎ 0234 3522 243 &nbsp;|&nbsp; Mở 10h–22h</div>
+      <div class="resto-how">Gọi điện đặt trước, thông báo 15 người và yêu cầu khu ngồi riêng. Set menu từ ~150k/người. Không gian nhà vườn đẹp để chụp ảnh. Phù hợp cả trẻ em & người cao tuổi.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">🟡 Tầm trung · Trải nghiệm độc đáo</div>
+      <div class="resto-name">Không Gian Xưa (98 Minh Mạng)</div>
+      <div class="resto-spec">Ẩm thực cung đình · Mặc trang phục Hoàng gia chụp ảnh</div>
+      <div class="resto-addr">📍 98 Minh Mạng, Thủy Xuân, TP. Huế</div>
+      <div class="resto-phone">☎ +84 933 404 405 &nbsp;|&nbsp; Mở 9h–21h · 4.8/5 (2.472 đánh giá)</div>
+      <div class="resto-how">Trải nghiệm mặc áo hoàng bào chụp ảnh, không gian cung đình đẹp. Set menu ~150–200k/người. Rất phù hợp đoàn gia đình muốn trải nghiệm đặc sắc. Đặt trước vì đông khách.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">⭐ Cao cấp · Trung tâm thành phố</div>
+      <div class="resto-name">Không Gian Xưa (205 Điện Biên Phủ)</div>
+      <div class="resto-spec">Ẩm thực cung đình · Không gian kiến trúc đặc sắc</div>
+      <div class="resto-addr">📍 205 Điện Biên Phủ, TP. Huế</div>
+      <div class="resto-phone">☎ +84 795 538 754 &nbsp;|&nbsp; Mở 9h–21h · 4.5/5 (1.416 đánh giá)</div>
+      <div class="resto-how">Không gian cổ kính, thiết kế như trong cung vua. Có ghế chụp ảnh kiểu hoàng đế. ~200–300k/người. Phù hợp bữa tối đặc biệt nếu đoàn muốn trải nghiệm cao cấp hơn.</div>
+    </div>
+  </div>
+
+  <!-- ĐÀ NẴNG -->
+  <div class="sec-heading" style="margin-top:28px">
+    <div class="sec-icon">🏖️</div>
+    <h2>Nhà hàng tại Đà Nẵng · 5 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="resto-grid">
+    <div class="resto-card" style="border-left:3px solid var(--green);">
+      <div class="resto-loc">💚 Tiết kiệm · Ăn sáng · Mì Quảng</div>
+      <div class="resto-name">Mì Quảng Bà Mua</div>
+      <div class="resto-spec">Mì Quảng đặc sản · Đúng chất Đà Nẵng · Giá siêu rẻ</div>
+      <div class="resto-addr">📍 19–21 Trần Bình Trọng, Hải Châu, Đà Nẵng</div>
+      <div class="resto-phone">☎ Không cần đặt · Đến sớm trước 8h · ~30–50k/tô</div>
+      <div class="resto-how">Quán mì Quảng lâu đời nổi tiếng nhất Đà Nẵng. Không cần đặt bàn, chỉ đến sớm. Phù hợp ăn sáng trước khi đi tham quan. Giá bình dân, hương vị địa phương thật sự.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">🟡 Tầm trung · Tối ngày 3</div>
+      <div class="resto-name">Cội Nguồn Restaurant</div>
+      <div class="resto-spec">Ẩm thực Việt · Nguyên liệu tươi · Gần biển Mỹ Khê</div>
+      <div class="resto-addr">📍 94 Võ Nguyên Giáp, Mân Thái, Sơn Trà, Đà Nẵng</div>
+      <div class="resto-phone">☎ 0236 3928 079 &nbsp;|&nbsp; Mở 10h–22h</div>
+      <div class="resto-how">Nguyên liệu tươi được tuyển chọn kỹ. Giá ~100–160k/người. Đặt trước qua điện thoại hoặc Zalo. Gần khách sạn khu biển, đi bộ được sau tắm biển.</div>
+    </div>
+    <div class="resto-card featured" style="border-left:3px solid var(--gold);">
+      <div class="resto-loc">⭐ Gợi ý chính · Tối ngày 2</div>
+      <div class="resto-name">Madame Lân</div>
+      <div class="resto-spec">300 món 3 miền · "Hội An thu nhỏ" · Sức chứa lớn</div>
+      <div class="resto-addr">📍 4 Bạch Đằng, Hải Châu, Đà Nẵng</div>
+      <div class="resto-phone">☎ 0236 3561 669 &nbsp;|&nbsp; 0236 3561 679 &nbsp;|&nbsp; Mở 10h–22h</div>
+      <div class="resto-how">Đặt trước 1–2 ngày, nói rõ "đoàn 15 người". Không gian 2 tầng rộng, phong cách Hội An. ~130–180k/người. Phù hợp mọi lứa tuổi, thực đơn đa dạng nhất.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">⭐ Cao cấp · Michelin Guide · Hải sản</div>
+      <div class="resto-name">Hải Sản Mộc Quán</div>
+      <div class="resto-spec">Hải sản tươi sống · Được Michelin ghi nhận · 5 tầng</div>
+      <div class="resto-addr">📍 26 Tô Hiến Thành, An Hải, Đà Nẵng</div>
+      <div class="resto-phone">☎ +84 905 665 058 &nbsp;|&nbsp; Mở 10:30–22:30 · 4.8/5 (22.218 đánh giá)</div>
+      <div class="resto-how"><b>Bắt buộc đặt bàn trước</b> — mùa hè chờ 60–90 phút nếu không đặt. Nhân viên bóc tôm, cắt cua hộ. ~300–500k/người. Trải nghiệm hải sản đỉnh nhất Đà Nẵng.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">⭐ Cao cấp · View biển · Hải sản</div>
+      <div class="resto-name">Hải Sản Bé Biển</div>
+      <div class="resto-spec">Hải sản tươi · Ngay mặt biển · Phục vụ chu đáo</div>
+      <div class="resto-addr">📍 202 Võ Nguyên Giáp, An Hải, Đà Nẵng</div>
+      <div class="resto-phone">☎ +84 905 775 142 &nbsp;|&nbsp; Mở 7:30–02:00 · 4.7/5 (4.687 đánh giá)</div>
+      <div class="resto-how">Ngay mặt đường Võ Nguyên Giáp gần biển. Hải sản tươi, nhân viên bóc tôm hộ. ~200–400k/người. Mở đến 2 giờ sáng — phù hợp đoàn về muộn từ Hội An.</div>
+    </div>
+  </div>
+
+  <!-- HỘI AN -->
+  <div class="sec-heading" style="margin-top:28px">
+    <div class="sec-icon">🏮</div>
+    <h2>Nhà hàng tại Hội An · 3 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="resto-grid">
+    <div class="resto-card" style="border-left:3px solid var(--green);">
+      <div class="resto-loc">💚 Tiết kiệm · Ăn vặt phố cổ</div>
+      <div class="resto-name">Bánh mì Phượng + Chè phố cổ</div>
+      <div class="resto-spec">Bánh mì nổi tiếng thế giới · Chè Hội An · Ăn vặt dọc phố</div>
+      <div class="resto-addr">📍 Bánh mì Phượng: 2B Phan Châu Trinh · Chè: đường Trần Phú</div>
+      <div class="resto-phone">☎ Không cần đặt · ~15–40k/người · Mở từ 6h30</div>
+      <div class="resto-how">Dạo phố ăn vặt tự do. Bánh mì Phượng được Anthony Bourdain ca ngợi là "bánh mì ngon nhất thế giới". Chè Hội An nhiều vị. Không cần đặt bàn, mua và đi.</div>
+    </div>
+    <div class="resto-card featured" style="border-left:3px solid var(--gold);">
+      <div class="resto-loc">⭐ Gợi ý chính · Tối ngày 4</div>
+      <div class="resto-name">Vy's Market Restaurant</div>
+      <div class="resto-spec">Cơm gà · Cao lầu · Mì Quảng · Đặc sản Hội An</div>
+      <div class="resto-addr">📍 3 Nguyễn Hoàng, Phố cổ Hội An</div>
+      <div class="resto-phone">☎ 0235 3910 489 &nbsp;|&nbsp; Mở 10h–22h</div>
+      <div class="resto-how">Đặt trước 1–2 ngày — mùa hè rất đông. Không gian ngoài trời & trong nhà. ~120–180k/người. Thực đơn đặc sản Hội An đầy đủ nhất, phù hợp mọi lứa tuổi.</div>
+    </div>
+    <div class="resto-card">
+      <div class="resto-loc">⭐ Cao cấp · Không gian đẹp</div>
+      <div class="resto-name">Ô Kìa Seafood Restaurant</div>
+      <div class="resto-spec">Hải sản tươi · Không gian yên tĩnh · Dịch vụ tốt</div>
+      <div class="resto-addr">📍 7 Trần Phú, Hải Châu, Đà Nẵng (gần Hội An)</div>
+      <div class="resto-phone">☎ +84 906 430 707 &nbsp;|&nbsp; Mở 6h–23h · 4.8/5 (2.884 đánh giá)</div>
+      <div class="resto-how">Hải sản tươi, phục vụ chu đáo — nhân viên bóc tôm hộ. ~200–400k/người. Đặt bàn trước qua điện thoại. Phù hợp nếu đoàn muốn bữa tối hải sản chất lượng cao ở Đà Nẵng.</div>
+    </div>
+  </div>
+
+  <!-- QUẢNG BÌNH -->
+  <div class="sec-heading" style="margin-top:28px">
+    <div class="sec-icon">🦑</div>
+    <h2>Nhà hàng tại Quảng Bình · 2 lựa chọn</h2>
+    <div class="line"></div>
+  </div>
+  <div class="resto-grid">
+    <div class="resto-card" style="border-left:3px solid var(--green);">
+      <div class="resto-loc">💚 Tiết kiệm · Sáng ngày 6</div>
+      <div class="resto-name">Bún cá, bánh canh cua chợ Đồng Hới</div>
+      <div class="resto-spec">Đặc sản sáng Quảng Bình · Siêu rẻ · Rất no</div>
+      <div class="resto-addr">📍 Khu chợ trung tâm TP. Đồng Hới</div>
+      <div class="resto-phone">☎ Không cần đặt · ~30–50k/tô · Mở từ 5h30</div>
+      <div class="resto-how">Bún cá Quảng Bình — đặc sản địa phương không thể bỏ qua. Ăn sáng tại chợ trước khi lên đường về Thái Bình. Cực ngon, giá rất rẻ, no bụng cho cả ngày dài.</div>
+    </div>
+    <div class="resto-card featured" style="border-left:3px solid var(--gold);">
+      <div class="resto-loc">⭐ Gợi ý chính · Tối ngày 5</div>
+      <div class="resto-name">Nhà hàng hải sản bờ sông Nhật Lệ</div>
+      <div class="resto-spec">Hải sản tươi Quảng Bình · View sông · Giá bình dân</div>
+      <div class="resto-addr">📍 Khu vực đường Quách Xuân Kỳ, TP. Đồng Hới</div>
+      <div class="resto-phone">☎ Nhờ concierge khách sạn Meliá/Toàn Cầu giới thiệu & đặt</div>
+      <div class="resto-how">Nhờ reception khách sạn gợi ý nhà hàng tốt nhất đang hoạt động. Hải sản Quảng Bình tươi ngon, giá rẻ hơn Đà Nẵng rất nhiều. ~100–200k/người. View sông Nhật Lệ đẹp.</div>
+    </div>
+  </div>
+
+  <div class="notice tip">
+    <b>💡 Mẹo đặt bàn cho đoàn 15 người:</b> Luôn thông báo rõ số lượng khi gọi. Hỏi về set menu đoàn — thường phục vụ nhanh hơn và giá gọn hơn gọi lẻ từng món. Đặt Zalo để lưu thông tin xác nhận. Mang theo tiền mặt vì một số nhà hàng phố cổ chưa nhận thẻ. Hải sản Mộc Quán và Bé Biển cần đặt bàn sớm nhất vì đông nhất.
+  </div>
+</div><!-- end #nh -->
+
+
+<!-- ===== PANEL: CHI PHÍ ===== -->
+<div id="cp" class="panel">
+
+  <div class="notice warn">
+    <b>⚠️ Giá ước tính mùa cao điểm tháng 6/2026.</b> Tất cả dịch vụ tăng 15–25% so với thấp điểm. Đặt sớm = giá tốt hơn. Trẻ em dưới 100cm miễn vé nhiều điểm. Giá có thể thay đổi — liên hệ xác nhận trực tiếp.
+  </div>
+
+  <div class="cost-wrap">
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th style="width:42%">Hạng mục</th>
+          <th>Đơn vị</th>
+          <th style="text-align:right">SL</th>
+          <th style="text-align:right">Đơn giá</th>
+          <th style="text-align:right">Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="5">🚌 Vận chuyển</td></tr>
+        <tr>
+          <td>Thuê xe 45 chỗ (6 ngày — mùa hè)</td>
+          <td>Chuyến</td>
+          <td class="num">1</td>
+          <td class="num">26.000.000đ</td>
+          <td class="num">26.000.000đ</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">🏨 Lưu trú (5 phòng × 5 đêm)</td></tr>
+        <tr>
+          <td>Huế — White Lotus (1 đêm × 5 phòng)</td>
+          <td>Phòng/đêm</td>
+          <td class="num">5</td>
+          <td class="num">950.000đ</td>
+          <td class="num">4.750.000đ</td>
+        </tr>
+        <tr>
+          <td>Đà Nẵng — Parosand (3 đêm × 5 phòng)</td>
+          <td>Phòng/đêm</td>
+          <td class="num">15</td>
+          <td class="num">1.300.000đ</td>
+          <td class="num">19.500.000đ</td>
+        </tr>
+        <tr>
+          <td>Quảng Bình — Meliá Vinpearl (1 đêm × 5 phòng)</td>
+          <td>Phòng/đêm</td>
+          <td class="num">5</td>
+          <td class="num">1.600.000đ</td>
+          <td class="num">8.000.000đ</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">🎫 Vé tham quan (15 người)</td></tr>
+        <tr>
+          <td>Thuyền rồng ca Huế + hoa đăng</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">120.000đ</td>
+          <td class="num">1.800.000đ</td>
+        </tr>
+        <tr>
+          <td>Lăng Tự Đức + Đại Nội Huế</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">200.000đ</td>
+          <td class="num">3.000.000đ</td>
+        </tr>
+        <tr>
+          <td>Núi Thần Tài (combo khoáng + bùn)</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">380.000đ</td>
+          <td class="num">5.700.000đ</td>
+        </tr>
+        <tr>
+          <td>VinWonders Nam Hội An (combo online)</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">500.000đ</td>
+          <td class="num">7.500.000đ</td>
+        </tr>
+        <tr>
+          <td>Vé vào phố cổ Hội An</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">120.000đ</td>
+          <td class="num">1.800.000đ</td>
+        </tr>
+        <tr>
+          <td>Động Thiên Đường (Quảng Bình)</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">260.000đ</td>
+          <td class="num">3.900.000đ</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">🍽️ Ăn uống (15 người)</td></tr>
+        <tr>
+          <td>Ăn tối nhà hàng đặc sản (5 bữa)</td>
+          <td>Người/bữa</td>
+          <td class="num">75</td>
+          <td class="num">160.000đ</td>
+          <td class="num">12.000.000đ</td>
+        </tr>
+        <tr>
+          <td>Ăn trưa nhà hàng di chuyển (5 bữa)</td>
+          <td>Người/bữa</td>
+          <td class="num">75</td>
+          <td class="num">120.000đ</td>
+          <td class="num">9.000.000đ</td>
+        </tr>
+        <tr>
+          <td>Ăn sáng dọc đường (2 bữa — ngày 1 & 6)</td>
+          <td>Người/bữa</td>
+          <td class="num">30</td>
+          <td class="num">70.000đ</td>
+          <td class="num">2.100.000đ</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">🛍️ Phát sinh & cá nhân</td></tr>
+        <tr>
+          <td>Quà lưu niệm, đặc sản, chi tiêu cá nhân</td>
+          <td>Người</td>
+          <td class="num">15</td>
+          <td class="num">400.000đ</td>
+          <td class="num">6.000.000đ</td>
+        </tr>
+        <tr>
+          <td>Dự phòng phát sinh (10%)</td>
+          <td>—</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">~11.105.000đ</td>
+        </tr>
+
+        <tr class="total-row">
+          <td colspan="4">Tổng ước tính cả đoàn (15 người)</td>
+          <td>~122.155.000đ</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="4">Bình quân mỗi người</td>
+          <td>~8.144.000đ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice tip" style="margin-top:16px">
+    <b>💡 Cách tiết kiệm chi phí:</b> Mua combo VinWonders + Núi Thần Tài online giảm 10–15%. Trẻ em dưới 100cm miễn vé nhiều điểm tham quan. Gọi nhà hàng đặt set menu cho đoàn thay vì gọi lẻ. Gọi trực tiếp khách sạn xin giá nhóm. Tổng có thể giảm còn ~112–115 triệu nếu tối ưu tốt (~7,5 triệu/người).
+  </div>
+</div><!-- end #cp -->
+
+
+<!-- ===== PANEL: LƯU Ý ===== -->
+<div id="luu" class="panel">
+
+  <div class="sec-heading">
+    <div class="sec-icon">🌤️</div>
+    <h2>Thời tiết & Sức khỏe</h2>
+    <div class="line"></div>
+  </div>
+  <div class="notice info">
+    <b>Nhiệt độ tháng 6:</b> Đà Nẵng 30–34°C, Huế tương tự, Quảng Bình 32–36°C. Nắng cực mạnh khung 10h–15h — không cho trẻ nhỏ và người cao tuổi hoạt động ngoài trời giờ này.<br><br>
+    <b>Đồ cần mang theo:</b> Kem chống nắng SPF 50+, mũ rộng vành, áo chống nắng, kính mát, thuốc hạ sốt, thuốc tiêu hóa, dầu gió, thuốc say xe, bình nước cá nhân. Quần áo thoáng mát, thấm hút mồ hôi.<br><br>
+    <b>Mưa bất chợt:</b> Tháng 6 có thể có mưa rào chiều tối. Chuẩn bị áo mưa nhẹ hoặc ô gọn.
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-icon">🚌</div>
+    <h2>Di chuyển & Giao thông</h2>
+    <div class="line"></div>
+  </div>
+  <div class="notice info">
+    <b>Đà Nẵng → Hội An:</b> Mùa hè cao điểm có thể mất 75–90 phút (thay vì 45 phút bình thường). Luôn xuất phát trước 8:00 để tránh tắc.<br><br>
+    <b>Lịch nghỉ tài xế:</b> Theo quy định, tài xế phải nghỉ 30 phút sau mỗi 4 tiếng lái xe. Lên lịch dừng nghỉ phù hợp, không yêu cầu tài xế lái liên tục.<br><br>
+    <b>Đặt xe trước:</b> Xe 45 chỗ mùa hè cần đặt trước 1–2 tháng. Ký hợp đồng rõ ràng về lịch trình, giá cả, bao gồm xăng dầu.
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-icon">📋</div>
+    <h2>Checklist việc cần làm ngay</h2>
+    <div class="line"></div>
+  </div>
+  <div class="notice warn">
+    <b>🔴 Làm ngay (trước 15/05/2026):</b><br>
+    ☐ Đặt xe 45 chỗ — ký hợp đồng, đặt cọc<br>
+    ☐ Đặt phòng khách sạn cả 3 điểm (Huế, Đà Nẵng, Quảng Bình)<br>
+    ☐ Mua vé VinWonders Nam Hội An online (combo)<br>
+    ☐ Mua vé Núi Thần Tài combo online<br>
+    ☐ Đặt vé Động Thiên Đường (có thể đặt online)<br><br>
+    <b>🟡 Làm trước ngày đi 1 tuần:</b><br>
+    ☐ Đặt thuyền rồng ca Huế (gọi khách sạn nhờ đặt giúp)<br>
+    ☐ Đặt bàn Nhà hàng Tịnh Gia Viên (Huế)<br>
+    ☐ Đặt bàn Madame Lân (Đà Nẵng)<br>
+    ☐ Đặt bàn Vy's Market (Hội An)<br>
+    ☐ Gọi khách sạn Đồng Hới nhờ giới thiệu nhà hàng hải sản tối 28/06<br><br>
+    <b>🟢 Trước ngày đi 1–2 ngày:</b><br>
+    ☐ Nhắc nhở thành viên chuẩn bị thuốc cá nhân<br>
+    ☐ Thu tiền đoàn (nếu chia sẻ chi phí)<br>
+    ☐ In hoặc lưu file này để tiện tra cứu
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-icon">👨‍👩‍👧‍👦</div>
+    <h2>Lưu ý đặc biệt — Đoàn đa thế hệ</h2>
+    <div class="line"></div>
+  </div>
+  <div class="notice tip">
+    <b>🧒 Trẻ em (5–12 tuổi):</b> Chuẩn bị thuốc say xe, đồ chơi nhỏ trên xe dài. Tắm biển nên có người lớn đi kèm. VinWonders & Núi Thần Tài là điểm các bé thích nhất.<br><br>
+    <b>👴 Người cao tuổi (u60):</b> Nghỉ trưa bắt buộc ngày 3 và 4. Mang ghế nhỏ gấp nếu cần. Giày đế mềm, không đi dép lê dạo phố cổ. Uống đủ nước.<br><br>
+    <b>🏨 Phòng ở:</b> Ưu tiên cho người cao tuổi và trẻ em phòng có giường đôi, tầng thấp, gần thang máy. Thông báo yêu cầu này khi đặt phòng.<br><br>
+    <b>🌡️ Mùa hè nắng nóng:</b> Cả đoàn nên uống ít nhất 2 lít nước/ngày. Chuẩn bị muối bổ sung điện giải. Dấu hiệu say nắng: chóng mặt, buồn nôn, da đỏ — vào ngay nơi có điều hòa.
+  </div>
+
+</div><!-- end #luu -->
+
+</div><!-- end .container -->
+
+<footer>
+  <div>Kế hoạch du lịch Miền Trung · 6 Ngày 5 Đêm · Khởi hành 24/06/2026</div>
+  <div>Thái Bình → Huế → Đà Nẵng → Hội An → Quảng Bình → Thái Bình</div>
+  <div style="margin-top:6px;font-size:11px">Giá ước tính, cập nhật tháng 5/2026. Liên hệ trực tiếp các đơn vị để xác nhận giá chính xác.</div>
+</footer>
+
+<script>
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
